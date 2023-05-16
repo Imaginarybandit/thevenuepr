@@ -1,4 +1,12 @@
 {
+  "name": "venue",
+  "version": "1.0.0",
+  "description": "Venue is a web application that allows users to create and review venues. In order to review or create a venue, you must have an account. This project was created using Node.js, Express, MongoDB, and Bootstrap. Passport.js was used to handle authentication.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
   "dependencies": {
     "axios": "^1.4.0",
     "cloudinary": "^1.37.0",
