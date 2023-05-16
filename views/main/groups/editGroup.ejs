@@ -1,0 +1,90 @@
+<% layout('./layouts/boilerplate') %>
+<body>
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <h1 class="headerColor">Edita un grupo</h1>
+        <form
+          action="/groups/<%=group._id%>?_method=PATCH"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div class="form-group">
+            <label class="headerColor" for="groupName">Nombre del grupo</label>
+            <input
+              type="text"
+              class="form-control"
+              id="groupName"
+              placeholder="Enter group name"
+              name="groupName"
+              value="<%=group.name%>"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="headerColor" for="groupDescription"
+              >Descripcion del grupo</label
+            >
+            <input id="descVal" type="hidden" value="<%=group.description%>" />
+            <textarea
+              class="form-control"
+              id="groupDescription"
+              rows="3"
+              placeholder="Entra una descripcion breve del grupo"
+              name="groupDescription"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label class="headerColor" for="website">Pagina web</label>
+            <input
+              type="text"
+              class="form-control"
+              id="website"
+              placeholder="Enter a website"
+              value="<%=group.website%>"
+              name="website"
+            />
+          </div>
+          <div class="form-group">
+            <label class="headerColor" for="contact"
+              >Informacion de contacto</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="phone"
+              placeholder="Entra un telefono"
+              value="<%=group.phone%>"
+              name="phone"
+            />
+            <input
+              type="email"
+              class="form-control mt-2"
+              id="email"
+              placeholder="Entra un email"
+              value="<%=group.email%>"
+              name="email"
+            />
+          </div>
+
+          <!-- Create a div for inserting an image -->
+          <label class="headerColor" for="groupImage">Poster Image</label>
+          <div class="input-group">
+            <input
+              type="file"
+              class="form-control"
+              id="groupImage"
+              name="groupImage"
+              aria-describedby="inputGroupFileAddon04"
+              aria-label="Upload"
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary mx-auto mt-3">
+            Submit Changes
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
