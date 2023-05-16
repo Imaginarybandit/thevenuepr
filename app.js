@@ -29,11 +29,12 @@ const adminRouter = require("./routes/user/admin");
 const gelleryRouter = require("./routes/gallery/gallery");
 const apisRouter = require("./routes/apis/apis");
 const notificationsRouter = require("./routes/notifications/notifications");
-//const error = require("./routes/error/error");
 const User = require("./models/user");
 const savedPublications = require("./routes/savedPublications/savedPublications");
 //"mongodb://localhost:27017/PFdummy"
 //process.env.DBURL
+//if process.env.DBURL is not defined, then use the local database
+
 const dbUrl = process.env.DBURL || "mongodb://127.0.0.1:27017/PFdummy";
 mongoose.connect(dbUrl, {
   useNewUrlParser: true,
